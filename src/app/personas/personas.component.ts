@@ -8,5 +8,21 @@ import { Component } from '@angular/core';
 })
 
 export class PersonasComponent {
+    agregarPersona=false;
+    agregarPersonaStatus = "No ha agregado ninguna persona";
+
+    constructor(){
+      setTimeout(
+        () => {
+          this.agregarPersona = true;
+        }
+        ,3000);
+    }
+
+
+    onCrearPersona(){
+        this.agregarPersonaStatus = "Persona agregada";
+    }
+
 
 }
