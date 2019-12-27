@@ -11,7 +11,11 @@
 
       <h1>Listado de Personas</h1>
       <button class="btn btn-primary" [disabled]="!agregarPersona" (click)="onCrearPersona()">Agregar Persona</button>
-      <p *ngIf="personaCreada">{{agregarPersonaStatus}}</p>
+      <p *ngIf="personaCreada; else sinPersona">{{agregarPersonaStatus}} con titulo de {{tituloPersona}}</p>
+
+      <ng-template #sinPersona>
+        <p>No se ha agregado ninguna persona</p>
+      </ng-template>
 
       <app-persona></app-persona>
 
